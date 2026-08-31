@@ -1,0 +1,34 @@
+port_name,country,max_draft_m,max_loa_m,max_beam_m,handling_rate_tpd,latitude,longitude
+Paradip,India,14.5,230.0,33.0,25000,20.2644,86.6713
+Visakhapatnam,India,14.0,230.0,32.5,22000,17.6868,83.2185
+Dhamra,India,17.5,295.0,45.0,35000,20.8030,86.9730
+Haldia,India,8.5,190.0,27.0,12000,22.0257,88.0583
+Chennai,India,14.0,230.0,33.0,20000,13.0827,80.2707
+Maurer,United States,11.0,230.0,33.0,20000,40.5333,-74.2500
+Iharana,Madagascar,14.0,200.0,30.0,15000,-13.3500,50.0000
+Ammassalik,Greenland,10.5,180.0,25.0,10000,65.6142,-37.6368
+Boca Grande,United States,12.8,220.0,32.0,20000,26.7533,-82.2617
+Bridgwater,United Kingdom,8.0,120.0,18.0,5000,51.1284,-3.0035
+Bullen Baai,Curacao,18.0,300.0,45.0,30000,12.1833,-69.0167
+Cabo Rojo,Dominican Republic,11.5,200.0,30.0,15000,17.9000,-71.6500
+Canaport (St. John),Canada,16.0,280.0,42.0,25000,45.2042,-66.0100
+Cap Haitien,Haiti,9.5,160.0,24.0,8000,19.7600,-72.2000
+Celukan Bawang,Indonesia,12.0,200.0,30.0,15000,-8.1942,114.8389
+Diego Garcia,British Indian Ocean Territory,12.5,220.0,32.0,15000,-7.3133,72.4117
+Hibikinada,Japan,14.0,230.0,33.0,20000,33.9317,130.7717
+Ishikari Bay New Port,Japan,14.0,230.0,33.0,20000,43.2217,141.2850
+Jiddah,Saudi Arabia,16.0,280.0,42.0,30000,21.4858,39.1925
+Jurong Island,Singapore,15.5,270.0,40.0,30000,1.2667,103.6833
+Kota Kinabalu,Malaysia,11.0,190.0,28.0,12000,5.9800,116.0700
+Lautoka Harbor,Fiji,11.0,190.0,28.0,10000,-17.6067,177.4433
+Manati,Cuba,10.0,170.0,26.0,10000,21.3667,-76.8333
+Nassau,Bahamas,10.0,180.0,27.0,12000,25.0833,-77.3500
+Pismo Beach,United States,9.0,150.0,22.0,8000,35.1428,-120.6414
+Pointe A Pitre,Guadeloupe,11.0,190.0,28.0,12000,16.2333,-61.5333
+Port Isabel,United States,11.0,190.0,28.0,12000,26.0792,-97.2078
+Porto Di Oristano,Italy,10.0,170.0,26.0,10000,39.8550,8.5433
+Puerto Chacabuco,Chile,10.0,170.0,26.0,10000,-45.4667,-72.8167
+Puerto Plata,Dominican Republic,10.5,180.0,27.0,10000,19.8000,-70.6833
+Rendsburg,Germany,9.5,160.0,24.0,8000,54.3000,9.6667
+San Fernando Harbor,Philippines,11.0,190.0,28.0,12000,16.6167,120.3167
+Talcahuano,Chile,12.0,200.0,30.0,15000,-36.7167,-73.1167

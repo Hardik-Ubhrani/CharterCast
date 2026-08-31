@@ -1,0 +1,5 @@
+vessel_id,vessel_name,vessel_class,dwt,loa_m,beam_m,draft_m,built_year
+101,MV Handy Trader,Handysize,35000,178.5,27.6,9.8,2018
+102,MV Supra Leader,Supramax,58000,199.9,32.2,12.5,2020
+103,MV Panama Star,Panamax,76000,225.0,32.26,14.2,2021
+104,MV Cape Ocean,Capesize,180000,292.0,45.0,18.1,2019

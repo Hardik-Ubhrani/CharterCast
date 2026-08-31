@@ -1,0 +1,6 @@
+date,origin,destination,vessel_class,freight_rate,bdi,bunker,coal_price,usd_inr
+2026-08-01,Australia,Paradip,Panamax,31.4,1850,620.0,135.0,83.2
+2026-08-05,Australia,Paradip,Panamax,31.2,1830,618.0,134.5,83.25
+2026-08-10,Australia,Paradip,Panamax,30.8,1810,615.0,133.0,83.3
+2026-08-15,Australia,Paradip,Panamax,30.5,1790,612.0,132.5,83.35
+2026-08-20,Australia,Paradip,Panamax,29.9,1760,610.0,131.0,83.4
