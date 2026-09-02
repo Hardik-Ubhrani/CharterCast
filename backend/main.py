@@ -69,6 +69,8 @@ from backend.api.vessel import router as vessel_router
 from backend.api.risk import router as risk_router
 from backend.api.scenario import router as scenario_router
 from backend.api.analyze import router as analyze_router
+from backend.api.freight import router as freight_router
+from backend.api.trade_route import router as trade_route_router
 
 app.include_router(health_router, prefix="/api")
 app.include_router(forecast_router, prefix="/api")
@@ -76,6 +78,8 @@ app.include_router(vessel_router, prefix="/api")
 app.include_router(risk_router, prefix="/api")
 app.include_router(scenario_router, prefix="/api")
 app.include_router(analyze_router, prefix="/api")
+app.include_router(freight_router, prefix="/api")
+app.include_router(trade_route_router, prefix="/api")
 
 @app.get("/")
 def root():

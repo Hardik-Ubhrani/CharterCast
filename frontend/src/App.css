@@ -1,0 +1,137 @@
+/* CHARTER CAST App Specific Layout & Container Component Styling */
+
+/* Hero Banner Styles */
+.hero-banner {
+  padding: 2.25rem 2.5rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(11, 27, 51, 0.95) 0%, rgba(16, 37, 66, 0.9) 100%);
+  border: 1px solid rgba(0, 200, 255, 0.22);
+  margin-bottom: 1.75rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 40px -10px rgba(3, 8, 16, 0.7);
+}
+
+.hero-banner-bg-grid {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle at 85% 30%, rgba(0, 200, 255, 0.12) 0%, transparent 60%);
+  z-index: 0;
+}
+
+.hero-banner-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.hero-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.hero-title-highlight {
+  background: linear-gradient(90deg, #00C8FF 0%, #00D6B4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.hero-subtitle {
+  font-size: 0.975rem;
+  color: var(--muted-text);
+  margin-top: 0.6rem;
+  max-width: 680px;
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+/* Intelligence Summary Cards Bar */
+.decision-summary-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+@media (max-width: 900px) {
+  .decision-summary-bar {
+    grid-template-columns: 1fr;
+  }
+  .hero-banner-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-title {
+    font-size: 1.75rem;
+  }
+}
+
+.summary-card {
+  padding: 1.15rem 1.35rem;
+  background: rgba(11, 27, 51, 0.8);
+  border: 1px solid rgba(0, 200, 255, 0.15);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  backdrop-filter: var(--glass-blur);
+  transition: all 0.25s ease;
+}
+
+.summary-card:hover {
+  border-color: rgba(0, 200, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.summary-card-pending {
+  opacity: 0.75;
+  border-style: dashed;
+  border-color: rgba(143, 163, 187, 0.25);
+  background: rgba(11, 27, 51, 0.5);
+}
+
+.summary-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: rgba(0, 200, 255, 0.12);
+  border: 1px solid rgba(0, 200, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cyan);
+  flex-shrink: 0;
+}
+
+.summary-icon-box-pending {
+  background: rgba(143, 163, 187, 0.1);
+  border-color: rgba(143, 163, 187, 0.25);
+  color: var(--muted-text);
+}
+
+.summary-label {
+  font-size: 0.725rem;
+  font-weight: 800;
+  color: var(--muted-text);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.summary-value {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-top: 0.15rem;
+}
+

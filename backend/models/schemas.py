@@ -152,3 +152,52 @@ class AnalyzeResponse(BaseModel):
     estimated_saving: float
     confidence: float
     explanation: str
+
+
+# --- FREIGHT PREDICT SCHEMAS ---
+class FreightPredictRequest(BaseModel):
+    bdi: float = Field(default=1850.0, description="Baltic Dry Index")
+    daily_time_charter: float = Field(default=16500.0, description="Daily Time Charter rate ($/day)")
+    newcastle_coal_price: float = Field(default=135.0, description="Newcastle Coal price ($/MT)")
+    voyage_distance_nm: float = Field(default=4500.0, description="Voyage distance in nautical miles")
+
+
+class FreightPredictResponse(BaseModel):
+    predicted_freight_usd_mt: float
+    model_name: str = Field(default="XGBoost Spot Freight Model")
+
+
+
+# --- FREIGHT PREDICT SCHEMAS ---
+class FreightPredictRequest(BaseModel):
+    bdi: float = Field(default=1772, description="Baltic Dry Index")
+    daily_time_charter: float = Field(default=18957, description="Daily Time Charter rate in USD/day")
+    newcastle_coal_price: float = Field(default=158.44, description="Newcastle Coal price in USD/MT")
+    voyage_distance_nm: float = Field(default=5120, description="Voyage distance in nautical miles")
+
+
+class FreightPredictResponse(BaseModel):
+    predicted_freight_usd_mt: float
+    model_name: str = Field(default="XGBoost Freight Model")
+
+
+# --- TRADE ROUTE SCHEMAS ---
+class TradeRouteOptimizeRequest(BaseModel):
+    origin: str = Field(default="Australia", description="Origin port or region")
+    destination: str = Field(default="Dhamra", description="Destination port")
+    commodity: str = Field(default="Coking Coal", description="Commodity type")
+    vessel_class: str = Field(default="Capesize", description="Target vessel class")
+    cargo_quantity: Optional[float] = Field(default=None, description="Cargo quantity in metric tonnes")
+
+
+class TradeRouteOptimizeResponse(BaseModel):
+    origin: str
+    destination: str
+    vessel_class: str
+    recommended_route: List[str] = Field(default_factory=list)
+    distance_nm: Optional[float] = None
+    route_feasible: bool
+    reason: Optional[str] = None
+    engine_name: str = Field(default="Constraint-Aware A* Route Engine")
+
+

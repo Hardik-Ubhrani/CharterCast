@@ -203,3 +203,49 @@ def test_analyze_unknown_port():
     response = client.post("/api/analyze", json=payload)
     assert response.status_code == 400
 
+
+def test_freight_predict_valid():
+    payload = {
+        "bdi": 1772,
+        "daily_time_charter": 18957,
+        "newcastle_coal_price": 158.44,
+        "voyage_distance_nm": 5120
+    }
+    response = client.post("/api/freight/predict", json=payload)
+    assert response.status_code == 200
+    data = response.json()
+    assert "predicted_freight_usd_mt" in data
+    assert abs(data["predicted_freight_usd_mt"] - 21.06) < 1.0
+
+
+def test_trade_route_optimize_valid():
+    payload = {
+        "origin": "Australia",
+        "destination": "Dhamra",
+        "commodity": "Coking Coal",
+        "vessel_class": "Capesize"
+    }
+    response = client.post("/api/trade-route/optimize", json=payload)
+    assert response.status_code == 200
+    data = response.json()
+    assert data["route_feasible"] is True
+    assert data["recommended_route"] == ["Australia", "Lombok/Sunda Strait", "Dhamra"]
+    assert data["distance_nm"] == 5050.0
+    assert data["engine_name"] == "Constraint-Aware A* Route Engine"
+
+
+def test_trade_route_optimize_infeasible():
+    payload = {
+        "origin": "Indonesia",
+        "destination": "Haldia",
+        "commodity": "Thermal Coal",
+        "vessel_class": "Capesize"
+    }
+    response = client.post("/api/trade-route/optimize", json=payload)
+    assert response.status_code == 200
+    data = response.json()
+    assert data["route_feasible"] is False
+    assert data["reason"] is not None
+    assert "exceeds" in data["reason"].lower() or "no feasible" in data["reason"].lower()
+
+
