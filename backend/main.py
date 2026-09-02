@@ -11,8 +11,22 @@ load_dotenv()
 APP_NAME = os.getenv("APP_NAME", "PORTWISE AI Backend")
 VERSION = os.getenv("VERSION", "0.1.0")
 DEBUG = os.getenv("DEBUG", "true").lower() == "true"
-CORS_ORIGINS_RAW = os.getenv("CORS_ORIGINS", "http://localhost:3000,http://localhost:5173")
+DEFAULT_CORS_ORIGINS = [
+    "http://localhost:3000",
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "http://localhost:5175",
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1:5173",
+    "http://127.0.0.1:5174",
+    "http://127.0.0.1:5175",
+    "https://chartercastm.vercel.app",
+]
+CORS_ORIGINS_RAW = os.getenv("CORS_ORIGINS", "")
 CORS_ORIGINS = [origin.strip() for origin in CORS_ORIGINS_RAW.split(",") if origin.strip()]
+for default_origin in DEFAULT_CORS_ORIGINS:
+    if default_origin not in CORS_ORIGINS:
+        CORS_ORIGINS.append(default_origin)
 
 from contextlib import asynccontextmanager
 from backend.models.database import init_db
@@ -36,6 +50,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=CORS_ORIGINS,
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
